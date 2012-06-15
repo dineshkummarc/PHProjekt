@@ -1,0 +1,10 @@
+.dijitToasterContent {
+    width: 35em;
+}
+
+
+#disableFrontendMessage {
+    border: 1px solid #DFDFDF;
+    width: 36em;
+    background: #EFEFEF;
+}

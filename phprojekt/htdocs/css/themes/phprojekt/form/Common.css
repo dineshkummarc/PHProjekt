@@ -1,0 +1,214 @@
+/*
+ dijit.form.TextBox
+ dijit.form.ValidationTextBox
+ dijit.form.SerializableTextBox
+ dijit.form.RangeBoundTextBox
+ dijit.form.NumberTextBox
+ dijit.form.CurrencyTextBox
+ dijit.form.NumberSpinner
+ dijit.form.ComboBox (partial)
+ */
+
+.phprojekt input {
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif !important;
+}
+
+.phprojekt .dijitInputField input,
+.phprojekt .dijitTextBox {
+    margin: 0em 0.2em;
+    width: 300px;
+}
+.phprojekt .dijitDateTextBox input {
+    padding-top: 1px;
+    padding-left: 0em;
+}
+
+.phprojekt .dijitComboBox {
+    padding: 0;
+}
+.phprojekt .dijitComboBox .dijitInputField input {
+    margin-left: 0.3em !important;
+}
+
+.phprojekt .dijitTextBox,
+.phprojekt .dijitTextArea {
+    padding: 0 0.3em 0.1em 0.3em; !important;
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 100%;
+}
+
+
+.phprojekt .dijitComboBox {
+    padding: 0 !important;
+}
+
+.phprojekt .dijitMultiSelect,
+.phprojekt .dijitComboBox,
+.phprojekt .dijitSpinner,
+.phprojekt .dijitSlider {
+    margin: 0em 0.1em !important;
+    width: 307px;
+}
+
+.dj_ie7 .phprojekt .dijitComboBox {
+    width: 308px;
+}
+
+.phprojekt .dijitTextBox,
+.phprojekt .dijitComboBox,
+.phprojekt .dijitMultiSelect,
+.phprojekt select,
+.phprojekt .dijitSpinner,
+.phprojekt .dijitInlineEditor input,
+.phprojekt .dijitTextArea {
+    /*
+     For all except dijit.form.NumberSpinner:  the actual input element.
+     For TextBox, ComboBox, Spinner: the table that contains the input.
+     Otherwise the actual input element.
+     */
+    border: 1px solid #8ba0bd;
+    line-height: normal;
+    font-size: 100%;
+}
+
+.phprojekt .dijitTextBoxDisabled,
+.phprojekt .dijitComboBoxDisabled,
+.phprojekt select,
+.phprojekt .dijitSpinnerDisabled,
+.phprojekt .dijitMultiSelect,
+.phprojekt .dijitTextAreaDisabled {
+    color: gray;
+}
+
+.phprojekt .dijitTextBoxDisabled,
+.phprojekt .dijitComboBoxDisabled,
+.phprojekt .dijitSpinnerDisabled,
+.phprojekt .dijitTextAreaDisabled {
+    background: #C3D3E5 url('../images/buttonDisabled.png') repeat-x scroll center top;
+    opacity: 0.6;
+}
+
+.dj_safari .phprojekt .dijitTextBoxDisabled,
+.dj_safari .phprojekt .dijitComboBoxDisabled,
+.dj_safari .phprojekt .dijitSpinnerDisabled,
+.dj_safari .phprojekt .dijitTextareaDisabled {
+    color: #eee;
+}
+
+.dj_gecko .phprojekt select {
+    padding: 0;
+}
+.phprojekt .dijitComboBox .dijitButtonNode,
+.phprojekt select {
+    padding: 0 0.2em;
+}
+.phprojekt .dijitComboBox .dijitButtonNode,
+.phprojekt .dijitSpinner .dijitButtonNode {
+    /* line between the input area and the drop down button */
+    border-color: #8ba0bd;
+    border-left: 1px solid #8ba0bd;
+}
+
+.phprojekt .dijitTextBoxFocused,
+.phprojekt .dijitComboBoxFocused,
+.phprojekt .dijitSpinnerFocused,
+.phprojekt .dijitTextAreaFocused {
+    /* input field when focused (ie: typing affects it) */
+    border-color: #406b9b;
+    background: #EBEADB;
+}
+
+.phprojekt .dijitComboBoxFocused .dijitButtonNode, .phprojekt .dijitSpinnerFocused .dijitButtonNode {
+    border-left-color: #8ba0bd;
+}
+
+.phprojekt .dijitSpinnerFocused .dijitDownArrowButton {
+    border-top-color: #8ba0bd;
+}
+
+.phprojekt .dijitError {
+    border-color: #f3d118;
+    background-color: #f9f7ba;
+    background-image: none;
+}
+
+.dj_ie6 .phprojekt .dijitError INPUT {
+    /* background-color: transparent on an <input> doesn't work on IE6 */
+    background-color: #f9f7ba !important;
+}
+
+.phprojekt .dijitErrorFocused {
+    background-color: #ff6;
+    background-image: none;
+}
+
+.dj_ie6 .phprojekt .dijitErrorFocused INPUT {
+    /* background-color: transparent on an <input> doesn't work on IE6 */
+    background-color: #ff6 !important;
+}
+
+/* Validation errors  */
+.phprojekt .dijitValidationIcon {
+    /* prevent height change when widget goes from valid to invalid state */
+    width: 16px;
+    background: transparent url('../images/warning.png') no-repeat center center;
+}
+
+/* The highlight is shown in the ComboBox menu. */
+.phprojekt .dijitComboBoxHighlightMatch {
+    background-color: #f9f7ba;
+}
+
+.phprojekt .dijitMenuItemSelected {
+    background-color: #d9e6f9;
+    color: #243C5F;
+}
+
+/* Two fields in the same row */
+.phprojekt .twoFields .dijitInputField input,
+.phprojekt .twoFields .dijitTextBox,
+.phprojekt .twoFields .dijitMultiSelect,
+.phprojekt .twoFields .dijitComboBox,
+.phprojekt .twoFields .dijitSpinner,
+.phprojekt .twoFields .dijitSlider {
+    width: 142px;
+}
+
+/* Sub Modules Form Fields */
+.phprojekt .subModuleDiv .dijitInputField input,
+.phprojekt .subModuleDiv .dijitTextBox {
+    width: 230px;
+}
+
+.phprojekt .subModuleDiv .dijitMultiSelect,
+.phprojekt .subModuleDiv .dojoxMultiSelect,
+.phprojekt .subModuleDiv .dijitComboBox,
+.phprojekt .subModuleDiv .dijitSpinner,
+.phprojekt .subModuleDiv .dijitSlider {
+    width: 237px;
+}
+
+.dj_ie .phprojekt .subModuleDiv .dojoxMultiSelect {
+    width: 224px;
+}
+
+.dj_ie7 .phprojekt .subModuleDiv .dijitComboBox {
+    width: 238px;
+}
+
+.phprojekt .subModuleDiv .twoFields .dijitInputField input,
+.phprojekt .subModuleDiv .twoFields .dijitTextBox,
+.phprojekt .subModuleDiv .twoFields .dijitMultiSelect,
+.phprojekt .subModuleDiv .twoFields .dijitComboBox,
+.phprojekt .subModuleDiv .twoFields .dijitSpinner,
+.phprojekt .subModuleDiv .twoFields .dijitSlider {
+    width: 107px;
+}
+
+.phprojekt .subModuleDiv .dijitTextArea {
+    width: 240px;
+}
+
+.dj_ie7 .phprojekt .subModuleDiv .dijitTextArea {
+    width: 230px;
+}

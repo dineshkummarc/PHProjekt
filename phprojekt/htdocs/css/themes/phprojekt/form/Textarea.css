@@ -1,0 +1,16 @@
+.phprojekt .dijitTextBox {
+    margin: 0em 0.1em 0.1em;
+}
+
+.phprojekt .dijitTextArea {
+    margin-left: 1px;
+    width: 310px;
+}
+
+.dj_ie7 .phprojekt .dijitTextArea {
+    width: 300px;
+}
+
+.phprojekt .dijitTextArea > div {
+    overflow: hidden;
+}

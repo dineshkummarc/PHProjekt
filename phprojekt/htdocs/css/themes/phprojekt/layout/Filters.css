@@ -1,0 +1,113 @@
+.phprojekt .displayOperator {
+    float: left;
+    padding: 1px 5px 1px;
+    width: auto;
+}
+
+.phprojekt .displayFilter {
+    float: left;
+    height: 20px;
+    padding-top: 1px;
+}
+
+.phprojekt .displayLeftFilter {
+    background: url("../images/filter-left.gif") left center no-repeat;
+    float: left;
+    height: 20px;
+}
+
+.phprojekt .displayFilterField {
+    background: #a4c0e8;
+    padding: 0px 2px 0px 2px;
+    float: left;
+    height: 20px;
+}
+
+.phprojekt .displayFilterRule {
+    background: #a4c0e8;
+    padding: 0px 4px 0px 2px;
+    float: left;
+    height: 20px;
+}
+
+.phprojekt .displayFilterValue {
+    background: #a4c0e8;
+    padding: 0px 2px 0px 2px;
+    float: left;
+    height: 20px;
+}
+
+.phprojekt .displayFilterButton {
+    background: #a4c0e8;
+    padding: 0px 2px 0px 0px;
+    float: left;
+    height: 20px;
+}
+
+.phprojekt .displayRightFilter {
+    background: url("../images/filter-right.gif") right center no-repeat;
+    float: left;
+    height: 20px;
+}
+
+.dj_ie .phprojekt .filterForm {
+    margin-top: 2px;
+}
+
+.dj_ie .phprojekt .displayOperator,
+.dj_ie .phprojekt .displayFilter {
+    margin-top: 7px;
+}
+
+.phprojekt .closeFilter {
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+
+
+.phprojekt .filterForm .dijitComboBox,
+.phprojekt .filterForm .dijitTextBox,
+.dj_ie .phprojekt .filterForm .dijitComboBox,
+.dj_ie .phprojekt .filterForm .dijitTextBox {
+    width: 14em;
+}
+
+.phprojekt .filterDisplayDiv {
+    border-top: 1px solid #294064;
+    height: auto !important;
+    overflow: visible;
+    padding-top: 5px;
+    width: 82% !important;
+    margin-top: 2px;
+}
+
+.phprojekt .filterDisplayDiv,
+.phprojekt .filterDisplayDelete {
+    float: left;
+    overflow: hidden;
+}
+
+.dj_ie .phprojekt .filterDisplayDiv {
+    padding-top: 0px;
+}
+
+.dj_ie .phprojekt .closeFilter {
+    padding-bottom: 0px;
+}
+
+.phprojekt .gridFiltersBox {
+    width: 100%;
+}
+
+.phprojekt .filesList .closeButton .dijitButtonNode,
+.phprojekt .gridFiltersBox .closeButton .dijitButtonNode {
+    width: 13px;
+    border: none;
+    background: none;
+    vertical-align: middle;
+}
+
+.phprojekt .filterDisplayDelete .dijitButtonNode,
+.phprojekt .filterButtonDiv .dijitButtonNode {
+    padding: 0px
+}

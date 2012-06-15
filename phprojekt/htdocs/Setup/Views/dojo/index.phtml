@@ -1,0 +1,506 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>PHProjekt</title>
+    <link rel="favicon" href="<?php echo $this->webpath ?>img/favicon.ico" type="image/x-icon" ></link>
+    <link rel="shortcut icon" href="<?php echo $this->webpath ?>img/favicon.ico" type="image/x-icon" ></link>
+
+    <?php
+    $cssFiles = array();
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/claro/claro.css";
+    $cssFiles[] = "dojo/release/dojo/dojo/resources/dojo.css";
+    $cssFiles[] = "css/themes/phprojekt/Calendar.css";
+    $cssFiles[] = "css/themes/phprojekt/Calendar_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/ColorPalette.css";
+    $cssFiles[] = "css/themes/phprojekt/Common.css";
+    $cssFiles[] = "css/themes/phprojekt/Dialog.css";
+    $cssFiles[] = "css/themes/phprojekt/Dialog_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Editor.css";
+    $cssFiles[] = "css/themes/phprojekt/Editor_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Grid.css";
+    $cssFiles[] = "css/themes/phprojekt/Grid_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Menu.css";
+    $cssFiles[] = "css/themes/phprojekt/Menu_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_designer.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_gantt.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_timecard.css";
+    $cssFiles[] = "css/themes/phprojekt/ProgressBar.css";
+    $cssFiles[] = "css/themes/phprojekt/ResizeHandle.css";
+    $cssFiles[] = "css/themes/phprojekt/TimePicker.css";
+    $cssFiles[] = "css/themes/phprojekt/TitlePane.css";
+    $cssFiles[] = "css/themes/phprojekt/TitlePane_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Toaster.css";
+    $cssFiles[] = "css/themes/phprojekt/Toolbar.css";
+    $cssFiles[] = "css/themes/phprojekt/Toolbar_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Tree.css";
+    $cssFiles[] = "css/themes/phprojekt/Tree_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Button.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Button_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Checkbox.css";
+    $cssFiles[] = "css/themes/phprojekt/form/CheckedMultiSelect.css";
+    $cssFiles[] = "css/themes/phprojekt/form/ComboBox.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Common.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Common_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/RadioButton.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Rating.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Slider.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Slider_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Textarea.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/AccordionContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/AccordionContainer_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/BorderContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/ContentPane.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/ExpandoPane.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/Filters.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/SplitContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/Template.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/css-classes.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/liquid.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/reset.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/typography.css";
+    $cssFiles[] = "css/themes/phprojekt/phprojektGrid.css";
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/dijit.css";
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/dijit_rtl.css";
+
+    $styleUrl = $this->webpath . 'min/min/?f=' . implode(',', $cssFiles);
+    ?>
+    <link href="<?php echo $styleUrl; ?>" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .dj_ie .phprojekt #serverFeedback {
+            padding-left: 5px;
+        }
+        #installForm {
+            height: auto !important;
+        }
+        #formContent {
+            height: auto !important;
+        }
+        #centerMainContent {
+            height: auto !important;
+        }
+    </style>
+    <script type="text/javascript">
+        var djConfig = {isDebug: false, parseOnLoad: false, bindEncoding: "utf-8",
+                        locale: 'en', useCommentedJson: true};
+    </script>
+    <script type="text/javascript" src="<?php echo $this->webPath; ?>dojo/release/dojo/dojo/dojo.js"></script>
+    <script type="text/javascript" src="<?php echo $this->webPath; ?>dojo/release/dojo/dojo/setup.js"></script>
+    <script type="text/javascript">
+        dojo.require("dijit.layout.BorderContainer");
+        dojo.require("dijit.layout.ContentPane");
+        dojo.require("dijit.Toolbar");
+        dojo.require("dijit.form.Form");
+        dojo.require("dijit.form.Button");
+        dojo.require("dijit.form.CheckBox");
+        dojo.require("dijit.form.TextBox");
+        dojo.require("dijit.TooltipDialog");
+        dojo.require("dijit.form.FilteringSelect");
+        function getMaxHeight() {
+            var availHeight = 0;
+
+            if (document.layers) {
+                availHeight = window.innerHeight + window.pageYOffset;
+            } else if (document.all) {
+                availHeight = document.documentElement.clientHeight + document.documentElement.scrollTop;
+            } else if (document.getElementById) {
+                availHeight = window.innerHeight + window.pageYOffset;
+            }
+
+            return availHeight;
+        }
+
+        function init() {
+            availHeight = getMaxHeight();
+
+            dojo.style(dojo.byId('completeContent'), "height", availHeight + "px");
+            if (dijit.byId('completeContent')) {
+                dijit.byId('completeContent').resize();
+            }
+
+            if (dojo.byId('completeCenterContent')) {
+                dojo.style(dojo.byId('completeCenterContent'), "height", (availHeight - 55) + "px");
+                if (dijit.byId('completeCenterContent')) {
+                    dijit.byId('completeCenterContent').resize();
+                }
+            }
+        }
+
+        dojo.addOnLoad(function() {
+            dojo.parser.parse();
+            init();
+        });
+
+        window.onresize = function() {
+            init();
+        };
+
+        function phprSend(paramsIn) {
+            var params = {
+                url:       "",
+                content:   "",
+                handleAs:  "json",
+                onSuccess: null,
+                onError:   null,
+                onEnd:     null,
+                sync:      false,
+                chunkMap:  {}
+            }
+            if (dojo.isObject(paramsIn)) {
+                dojo.mixin(params, paramsIn);
+            }
+            var _onError, _onSuccess = function() {};
+            var _onEnd = params.onEnd || function() {};
+
+            if (params.onError) {
+                _onError = function(response, ioArgs) {
+                    params.onError(response, ioArgs);
+                    _onEnd();
+                }
+            } else {
+                _onError = function(response, ioArgs) {
+                    _onEnd();
+                }
+            }
+
+            _onSuccess = function(data, ioArgs) {
+                dojo.byId('loadingIcon').style.display = 'none';
+                try {
+                    if (params.onSuccess) {
+                        params.onSuccess(data, ioArgs);
+                    }
+                    _onEnd();
+                } catch(e) {
+                    return;
+                }
+            };
+
+            dojo.byId('loadingIcon').style.display = 'inline';
+            dojo.xhrPost({
+                url:      params.url,
+                content:  params.content,
+                handleAs: params.handleAs,
+                sync:     params.sync,
+                error:    _onError,
+                load:     _onSuccess
+            });
+        };
+
+        function makeErrorLink(id, message) {
+            dojo.byId('resultFor' + id).innerHTML = "<a href=\"#\" onClick=\"dojo.style('"
+                + id + "Error', 'display', 'block'); return false;\">ERROR</a>"
+                + '<div dojoType="dijit.layout.ContentPane" id="' + id + 'Error" style="display: none;">'
+                + message + '</div>';
+        };
+
+        function makeImg(id) {
+            dojo.byId('resultFor' + id).innerHTML = '&nbsp;&nbsp;<img src=\"<?php echo $this->webPath; ?>img/ajax-loader.gif\"'
+                + ' style="width: 15px; height: 15px"; alt=\"Loadding\" />';
+        };
+
+        <?php
+            echo 'migrateData = new Array(';
+            $count = 0;
+            foreach ($this->exportModules as $module) {
+                $count++;
+                echo '{module: \'' . $module .'\'';
+                if ($count != count($this->exportModules)) {
+                    echo '},'."\n";
+                } else {
+                    echo ", processData: 'finish'}";
+                }
+            }
+            echo ');'."\n";
+        ?>
+
+        cloneMigrateData = dojo.clone(migrateData);
+        migrateStatus    = true;
+
+        function migrate() {
+            var params = cloneMigrateData.shift();
+
+            makeImg(params['module']);
+            phprSend({
+                url: '<?php echo $this->webPath; ?>' + 'setup.php/index/jsonMigrateSetup/module/'
+                    + params['module'],
+                content:   dijit.byId('installForm').attr('value'),
+                onSuccess: dojo.hitch(this, function(data) {
+                    if (data.type == 'error') {
+                        makeErrorLink(data.module, data.message);
+                        migrateStatus = false;
+                    } else {
+                        dojo.byId('resultFor' + data.module).innerHTML = '<span class="tick">'
+                            + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+                    }
+
+                    if (!params.processData) {
+                        if (data.type == 'error') {
+                            addMessage(data.type, data.message);
+                            dojo.style(dojo.byId('trResults'), 'display', 'none');
+                            migrateStatus    = false;
+                            cloneMigrateData = dojo.clone(migrateData);
+                        } else if (migrateStatus) {
+                            params.processData = dojo.hitch(this, "migrate");
+                            params.processData.call()
+                        }
+                    } else {
+                        if (migrateStatus) {
+                            if (data.type != 'error') {
+                                dijit.byId('formContent').attr('content', data.template);
+                            }
+                            addMessage(data.type, data.message);
+                        }
+                    }
+                })
+            });
+        };
+
+        function changeStep(oldStep, newStep) {
+            dojo.byId('Step' + oldStep).style.background = '#CCCCCC';
+            if (previous = dojo.byId('Step' + (oldStep - 1) + 'Img')) {
+                previous.innerHTML = '<img src="<?php echo $this->webPath; ?>'
+                    + 'img/setup/grey-grey.png" alt="" />';
+            }
+            dojo.byId('Step' + oldStep + 'Img').innerHTML = '<img src="<?php echo $this->webPath; ?>'
+                + 'img/setup/grey-blue.png" alt="" />';
+
+            dojo.byId('Step' + newStep).style.background = '#284164';
+            if (newStep != 7) {
+                dojo.byId('Step' + newStep + 'Img').innerHTML = '<img src="<?php echo $this->webPath; ?>'
+                    + 'img/setup/blue-grey.png" alt="" />';
+            } else {
+                dojo.byId('Step' + newStep + 'Img').innerHTML = '<img src="<?php echo $this->webPath; ?>'
+                    + 'img/setup/blue-white.png" alt="" />';
+            }
+        };
+
+        function addMessage(type, message) {
+            var table           = dojo.byId('message');
+            table.style.display = 'inline';
+
+            var messages = new Array();
+            if (typeof(message) != 'object') {
+                messages.push(message);
+            } else {
+                messages = message;
+            }
+
+            if (row = dojo.byId('trMessage0')) {
+                row.parentNode.removeChild(row);
+            }
+
+            var rowIndex = 0;
+            for (i in messages) {
+                if (row = dojo.byId('trMessage' + i)) {
+                    row.parentNode.removeChild(row);
+                }
+                var row       = table.insertRow(rowIndex);
+                row.id        = 'trMessage' + i;
+                var cellIndex = 0;
+                rowIndex++;
+
+                // Type
+                if (type == 'confirm') {
+                    type = 'notice';
+                }
+                var cell       = row.insertCell(cellIndex);
+                cell.innerHTML = '<div class="' + type + '" style="margin-bottom: 0;">' + type.toUpperCase(); + '</div>';
+                cellIndex++;
+
+                // Message
+                var cell = row.insertCell(cellIndex);
+                if (typeof(messages[i]) != 'object') {
+                    cell.innerHTML = messages[i];
+                    if (type == 'error') {
+                        cell.style.color = "red";
+                    }
+                    cellIndex++;
+                } else {
+                    // Tables messages
+
+                    // Module
+                    var cell       = row.insertCell(cellIndex);
+                    cell.innerHTML = i + "&nbsp;&nbsp;&nbsp;";
+                    cellIndex++;
+
+                    // Version
+                    var cell       = row.insertCell(cellIndex);
+                    cell.innerHTML = messages[i]['version'] + "&nbsp;&nbsp;&nbsp;";
+                    cellIndex++;
+
+                    // Process - structure
+                    var cell = row.insertCell(cellIndex);
+                    if (messages[i]['process'] && messages[i]['process']['structure']) {
+                        cell.innerHTML = 'Structure';
+                    } else {
+                        cell.innerHTML = "&nbsp;";
+                    }
+                    cell.innerHTML += "&nbsp;&nbsp;&nbsp;"
+                    cellIndex++;
+
+                    // Process - initalData
+                    var cell = row.insertCell(cellIndex);
+                    if (messages[i]['process'] && messages[i]['process']['initalData']) {
+                        cell.innerHTML = 'Initial Data';
+                    } else {
+                        cell.innerHTML = "&nbsp;";
+                    }
+                    cell.innerHTML += "&nbsp;&nbsp;&nbsp;"
+                    cellIndex++;
+
+                    // Process - extraData
+                    var cell = row.insertCell(cellIndex);
+                    if (messages[i]['process'] && messages[i]['process']['extraData']) {
+                        cell.innerHTML = 'Extra Data';
+                    } else {
+                        cell.innerHTML = "&nbsp;";
+                    }
+                    cell.innerHTML += "&nbsp;&nbsp;&nbsp;"
+                    cellIndex++;
+
+                    // Finish
+                    var cell       = row.insertCell(cellIndex);
+                    cell.innerHTML = messages[i]['finish'];
+                    cellIndex++;
+                }
+
+                // Icon
+                switch (type) {
+                    case 'error':
+                        icon     = 'cross';
+                        iconText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                        break;
+                    case 'success':
+                        icon     = 'tick';
+                        iconText = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                        break;
+                }
+                var cell       = row.insertCell(cellIndex);
+                cell.innerHTML = '<span class="' + icon + '">' + iconText + '</span>';
+                cellIndex++;
+
+                dojo.parser.parse(row);
+            }
+        };
+    </script>
+</head>
+<body class="phprojekt">
+
+<div id="completeContent" class="completeContent" dojoType="dijit.layout.BorderContainer" persist="true"
+ style="width: 100%; height: 1000px;">
+    <!-- Left Content -->
+    <div id="navigation-container" class="navigationContainer" dojoType="dijit.layout.ContentPane" region="left" splitter="false" minSize="180"
+    maxSize="300"
+    style="width: 15%; overflow: hidden;">
+        <div region="center" dojoType="dijit.layout.ContentPane">
+            <div id="tree-navigation" class="treeNavigation">
+                <div dojoType="dijit.layout.ContentPane" id="treeBox" class="treeBox"
+                 style="height: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar menu -->
+    <div dojoType="dijit.layout.ContentPane" region="top" id="header" class="header"
+    style="height: 55px; overflow: hidden;">
+        <img class="left" src="<?php echo $this->webPath; ?>img/logo.png" alt="PHProjekt 6" />
+        <div id="mainNavigation" class="mainNavigation"  class="right align-right" dojoType="dijit.Toolbar">
+        </div>
+        <div id="loadingIcon" class="loadingIcon" class="right align-right"
+        style="margin-top: 5px; margin-bottom: 5px; display: none;">
+            <img class="left" src="<?php echo $this->webPath; ?>img/ajax-loader.gif" alt="Loadding" />
+        </div>
+    </div>
+
+    <!-- Center Content -->
+    <div id="completeCenterContent" class="completeCenterContent" dojoType="dijit.layout.ContentPane" region="center"
+    style="height: 1000px;">
+        <div dojoType="dijit.layout.BorderContainer" design="sidebar"
+        style="height: 100%;">
+            <!-- Second Top Bar -->
+            <div dojoType="dijit.layout.ContentPane" region="top" class="block" splitter="false"
+            style="height: 100%;">
+                <div class="column">
+                    <img src="<?php echo $this->webPath; ?>img/subheaderborder.png" alt="" />
+                </div>
+                <div dojoType="dijit.layout.ContentPane" region="top" class="block" splitter="false"
+                style="height: 2%; overflow: hidden;">
+                </div>
+                <!-- Progress Bar -->
+                <div dojoType="dijit.layout.ContentPane" class="block" splitter="false"
+                style="height: 20px; color: white; text-align: right; overflow: hidden;">
+                    <div dojoType="dijit.layout.ContentPane" id="Step1"
+                    style="background: #284164; height: 20px; display: inline; float: left; padding: 0 10px 0 20px;">
+                        Server
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane"  id="Step1Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/blue-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane"  id="Step2"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Database
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane"  id="Step2Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step3"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Users
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step3Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step4"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Folders
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step4Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step5"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Tables
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step5Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step6"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Migration
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step6Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-grey.png" alt="" />
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step7"
+                    style="background: #CCCCCC; height: 20px; display: inline; float: left; padding: 0 10px 0 10px;">
+                        Done!
+                    </div>
+                    <div dojoType="dijit.layout.ContentPane" id="Step7Img"
+                    style="height: 20px; display: inline; float: left; overflow: hidden;">
+                        <img src="<?php echo $this->webPath; ?>img/setup/grey-white.png" alt="" />
+                    </div>
+                </div>
+                <br />
+                <!-- Main Content -->
+                <div dojoType="dijit.layout.ContentPane" region="center" id="centerMainContent" class="centerMainContent">
+                <form dojoType="dijit.form.Form" id="installForm" class="installForm" name="frm" method="post" onsubmit="return false;">
+                    <div dojoType="dijit.layout.ContentPane" id="formContent" class="formContent">
+                    <?php
+                    echo $this->template;
+                    ?>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

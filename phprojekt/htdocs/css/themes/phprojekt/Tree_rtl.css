@@ -1,0 +1,23 @@
+
+
+/* Tree */
+.dijitRtl .phprojekt .dijitTreeContainer .dijitTreeNode {
+    background-image : none;
+}
+
+.dijitRtl .phprojekt .dijitTreeContainer .dijitTreeContent {
+    padding-left: auto;
+    padding-right: 1px;
+}
+
+.dijitRtl .phprojekt .dijitTreeContainer .dijitTreeExpandoOpened {
+    background: url('images/spriteTree_rtl.gif') no-repeat -18px top;
+}
+
+.dijitRtl .phprojekt .dijitTreeContainer .dijitTreeExpandoClosed {
+    background-image: url('images/spriteTree_rtl.gif');
+}
+
+.dijitRtl .phprojekt .dijitTreeContainer .dijitTreeExpandoLeaf {
+    background: none;
+}

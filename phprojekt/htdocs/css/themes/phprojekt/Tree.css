@@ -1,0 +1,130 @@
+/* Tree */
+
+.phprojekt .dijitTreeNode {
+    background : url('images/treeI.gif') no-repeat;
+    background-position : top left;
+    background-repeat : repeat-y;
+    zoom: 1;    /* MOW: what the heck is this doing in here? */
+}
+
+.phprojekt .dijitTreeNodeHover {
+    /* using a transparent png so that we can still see grid lines, which are (unfortunately) behind the dijitRowNode that we are hovering over */
+    background-image: url('images/treeHover.png');
+    background-repeat: repeat;
+    background-color: none !important;
+}
+
+
+/* left vertical line (grid) for all nodes */
+.phprojekt .dijitTreeIsLast {
+    background: url('images/treeI_half.gif') no-repeat;
+}
+
+.phprojekt .dijitTreeLabel {
+    font-weight: normal;
+    margin-left: 3px;
+}
+
+.phprojekt .dijitTreeIsRoot {
+    margin-left: 0;
+    background-image: none;
+}
+
+.phprojekt .dijitTreeExpando {
+    width: 18px;
+    height: 18px;
+}
+
+.phprojekt .dijitTreeRow {
+    /* so insert line shows up on IE when dropping after a target element */
+    padding-bottom: 2px;
+}
+
+.phprojekt .dijitTreeContent {
+    min-height: 18px;
+    min-width: 18px;
+    padding-left:1px;
+}
+
+
+.phprojekt .dijitTreeExpand {
+    width: 18px;
+    height: 18px;
+    background-repeat : no-repeat;
+}
+
+/* same style as IE selection */
+.phprojekt .dijitTreeNodeEmphasized {
+    background-color: Highlight;
+    color: HighlightText;
+}
+
+/* don't use :focus due to opera and IE's lack of support on div's */
+.phprojekt .dijitTreeLabelFocused {
+    outline: 1px invert dotted;
+}
+
+.phprojekt .treeBox .selected {
+    background: #294064;
+}
+
+.phprojekt .treeBox .selected .dijitTreeLabel {
+    font-weight: 600;
+    color: #fff;
+}
+
+.phprojekt .dijitTreeExpandoOpened {
+    background: url('images/spriteTree.gif') no-repeat -18px top;
+}
+
+.phprojekt .dijitTreeExpandoClosed {
+    background-image: url('images/spriteTree.gif');
+}
+
+.phprojekt .dijitTreeExpandoLeaf {
+    background: url('images/spriteTree.gif') no-repeat -36px top;
+}
+
+.phprojekt .dijitTreeExpandoLoading {
+    background-image: url('images/treeExpand_loading.gif');
+}
+
+.phprojekt .dijitTreeIcon {
+    /*
+    width: 16px;
+    height: 16px;
+    */
+}
+
+.phprojekt .dijitFolderOpened {
+    /* background: url('images/spriteDivIcons.gif') no-repeat -16px top; */
+}
+
+.phprojekt .dijitFolderClosed {
+    /* background: url('images/spriteDivIcons.gif') no-repeat top left; */
+}
+
+.phprojekt .dijitLeaf {
+    /* background: url('images/spriteDivIcons.gif') no-repeat -32px top; */
+}
+
+/* Drag and Drop on TreeNodes
+ * Put insert line on dijitTreeContent node so it's aligned w/
+ * (ie, indented equally with) target element, even
+ * though dijitTreeRowNode is the actual "drag object"
+ */
+.phprojekt .dijitTreeNode .dojoDndItemBefore,
+.phprojekt .dijitTreeNode .dojoDndItemAfter {
+    border-bottom: none;
+    border-top: none;
+}
+
+.phprojekt .dijitTreeNode .dojoDndItemBefore .dijitTreeContent {
+    /* copied from Common.css */
+    border-top: 2px solid #369;
+}
+
+.phprojekt .dijitTreeNode .dojoDndItemAfter .dijitTreeContent {
+    /* copied from Common.css */
+    border-bottom: 2px solid #369;
+}

@@ -1,0 +1,50 @@
+<div class="claro" id="moduleDesignerContent" style="width: 100%; height: 100%; background-color: #294064;">
+    <div style="background-color: #294064; height: 98%; width: 48%; float: left;">
+        <div dojoType="phpr.Module.Designer" id="moduleDesignerSource" jsId="moduleDesignerSource" copyOnly="false"
+        skipForm="true" selfAccept="false"
+        style="background-color: #fff; height: 65%; width: 100%; margin: 4px; overflow: auto;">
+        </div>
+        <div dojoType="dijit.layout.TabContainer" id="moduleDesignerEditor" useMenu="false" useSlider="false"
+        style="display: block; background-color: #fff; height: 32%; width: 100%; margin: 4px;">
+            <div dojoType="dijit.layout.ContentPane" id="moduleDesignerEditorTable" title="{{tableText}}"
+            style="width: 100%; height: 95%;">
+            </div>
+            <div dojoType="dijit.layout.ContentPane" id="moduleDesignerEditorForm" title="{{formText}}"
+            style="width: 100%; height: 95%;">
+            </div>
+            <div dojoType="dijit.layout.ContentPane" id="moduleDesignerEditorList" title="{{listText}}"
+            style="width: 100%; height: 95%;">
+            </div>
+            <div dojoType="dijit.layout.ContentPane" id="moduleDesignerEditorGeneral" title="{{generalText}}"
+            style="width: 100%; height: 95%;">
+            </div>
+        </div>
+        <div id="moduleDesignerSaveButton"
+        style="width: 100%; margin: 4px; display: block;">
+            <br />
+            <button dojoType="dijit.form.Button" type="submit" onclick="
+            dojo.publish('Module.formProxy', ['processDialogData']);"
+            baseClass="positive" iconClass="tick">
+                {{saveText}}
+            </button>
+            &nbsp;&nbsp;
+            <button dojoType="dijit.form.Button"  type="submit"
+            baseClass="positive" iconClass="cancel">
+                {{cancelText}}
+            </button>
+        </div>
+    </div>
+    <div dojoType="dijit.layout.ContentPane"
+    style="background-color: #fff; height: 95.62%; width: 48%; float: right; margin: 4px;">
+        <div dojoType="dijit.layout.TabContainer" id="moduleDesignerTarget" useMenu="false" useSlider="false">
+            {% for tab in tabs %}
+            <div dojoType="dijit.layout.ContentPane" title="{{tab.name}}">
+                <div dojoType="phpr.Module.Designer" id="moduleDesignerTarget{{tab.nameId}}"
+                jsId="moduleDesignerTarget{{tab.nameId}}" skipForm="true" selfAccept="true"
+                style="background-color: #fff; width: 100%; height: 95%; margin: 0px;">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

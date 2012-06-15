@@ -1,0 +1,397 @@
+/*
+ dijit.form.Button
+ dijit.form.DropDownButton
+ dijit.form.ComboButton
+ dijit.form.ComboBox (partial)
+ */
+
+/* Icons used with PHProjekt Buttons */
+
+.phprojekt .cross {
+    background-image: url("../images/cross.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .cross {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .tick {
+    background-image: url("../images/tick.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .tick {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .tinytick {
+    background-image: url("../images/tick.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 8px;
+    height: 8px;
+}
+
+.dj_ie .phprojekt span .tinytick {
+    width: 8px;
+    left: 5px;
+}
+
+.phprojekt .disk {
+    background-image: url("../images/disk.png");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 20px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .disk {
+    width: 20px;
+    left: 5px;
+}
+
+.phprojekt .export {
+    background-image: url("../images/export.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 20px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .export {
+    width: 20px;
+    left: 5px;
+}
+
+.phprojekt .add {
+    background-image: url("../images/add.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 20px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .add {
+    width: 20px;
+    left: 5px;
+}
+
+.phprojekt .start {
+    background-image: url("../images/clock_play.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .start {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .stop {
+    background-image: url("../images/clock_stop.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .stop {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .help {
+    background-image: url("../images/help.gif");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .help {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .close {
+    background-image: url("../images/close.png");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 13px;
+    height: 13px;
+}
+
+.dj_ie .phprojekt span .close {
+    width: 13px;
+    left: 5px;
+}
+
+.phprojekt .edit {
+    background-image: url("../images/edit.png");
+    background-repeat: no-repeat;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .edit {
+    width: 16px;
+    left: 5px;
+}
+
+.phprojekt .filter {
+    background-image: url("../images/filter.png");
+    background-repeat: no-repeat;
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .filter {
+    width: 16px;
+    left: 1px;
+}
+
+.phprojekt .cancel {
+    background-image: url("../images/cancel.png");
+    background-repeat: no-repeat;
+    margin-left: 6px;
+    margin-right: 0px;
+    width: 16px;
+    height: 16px;
+}
+
+.dj_ie .phprojekt span .cancel {
+    width: 16px;
+    left: 6px;
+}
+
+.phprojekt .smallIcon .dijitButtonNode {
+    padding: 0 10px 0 0;
+    margin: 0;
+    width: 13px;
+    border: none;
+    background: none;
+    vertical-align: middle;
+}
+
+.phprojekt .dijitButtonNode {
+    /* enabled state - inner */
+    border: 1px solid #8ba0bd;
+    border-bottom: 1px solid #657c9c;
+    /* padding: 0.1em 0.2em 0.2em 0.2em; */
+    background: #bcd5f0 url("../images/buttonEnabled.png") repeat-x top left;
+}
+
+.phprojekt .dijitButtonNode button {
+    border: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.phprojekt .dijitButtonText {
+    text-align: center;
+    padding: 0 0.3em;
+}
+
+.phprojekt .dijitComboBox .dijitButtonNode {
+    border-width: 0px 0px 0px 1px;
+}
+
+.phprojekt .dijitArrowButton {
+    color: #111;
+}
+
+.phprojekt .dijitComboButton .dijitDownArrowButton {
+    padding-right: 4px;
+}
+
+.dj_ff2 .phprojekt .dijitComboButton .dijitButtonContentsFocused,
+.dj_ff2 .phprojekt .dijitComboButton .dijitDownArrowButtonFocused {
+    border: 1px black dotted !important;
+}
+
+.phprojekt .dijitButtonDisabled .dijitButtonNode,
+.phprojekt .dijitToggleButtonDisabled .dijitButtonNode,
+.phprojekt .dijitDropDownButtonDisabled .dijitButtonNode,
+.phprojekt .dijitComboButtonDisabled .dijitButtonNode,
+.phprojekt .dijitComboBoxDisabled,
+.phprojekt .dijitSpinnerDisabled,
+.phprojekt .dijitSpinnerDisabled .dijitButtonNode {
+    /* disabled state - inner */
+    border-color: #b9bbdd #b9bbdd #b9bbdd #b9bbdd;
+    background: #c3d3e5 url("../images/buttonDisabled.png") top repeat-x;
+    opacity: 0.60; /* Safari, Opera and Mozilla */
+}
+
+.phprojekt .dijitButtonHover .dijitButtonNode,
+.phprojekt .dijitButtonNodeHover,
+.phprojekt .dijitToggleButtonHover .dijitButtonNode,
+.phprojekt .dijitDropDownButtonHover .dijitButtonNode,
+.phprojekt .dijitComboButtonHover .dijitButtonContents,
+.phprojekt .dijitComboButtonDownArrowHover .dijitDownArrowButton,
+.phprojekt .dijitComboBoxHover .dijitDownArrowButton,
+.phprojekt .dijitSpinnerUpArrowHover .dijitUpArrowButton,
+.phprojekt .dijitSpinnerDownArrowHover .dijitDownArrowButton {
+    /* hover state - inner */
+    /* TODO: change from Hover to Selected so that button is still highlighted while drop down is being used */
+    color: #000;
+}
+
+.phprojekt .dijitSpinnerUpArrowActive .dijitUpArrowButton,
+.phprojekt .dijitSpinnerDownArrowActive .dijitDownArrowButton,
+.phprojekt .dijitButtonActive .dijitButtonNode,
+.phprojekt .dijitToggleButtonActive .dijitButtonNode,
+.phprojekt .dijitDropDownButtonActive .dijitButtonNode,
+.phprojekt .dijitComboButtonActive .dijitButtonContents,
+.phprojekt .dijitDownArrowActive .dijitDownArrowButton,
+.phprojekt .dijitComboBoxActive .dijitDownArrowButton {
+    /*
+     active state - inner (for when you are pressing a normal button, or
+     when a toggle button is in a depressed state
+     */
+    border-color: #657c9c;
+}
+
+.phprojekt .dijitArrowButtonInner {
+    background: url("../images/spriteArrows.png") no-repeat left top;
+    width: 11px;
+}
+
+.phprojekt .dijitUpArrowButton .dijitArrowButtonInner {
+    background: url("../images/spriteArrows.png") no-repeat -22px top;
+    width: 11px;
+}
+
+.dj_ie6 .phprojekt .dijitArrowButtonInner {
+    background: url("../images/spriteArrows.gif") no-repeat left top;
+    width: 11px;
+}
+
+.dj_ie6 .phprojekt .dijitUpArrowButton .dijitArrowButtonInner {
+    background: url("../images/spriteArrows.gif") no-repeat -22px top;
+    width: 11px;
+}
+
+.phprojekt .systemNavigation {
+    margin: 0px 0px 0px;
+    float: left;
+}
+
+.phprojekt .mainNavigation .dijitButtonContents,
+.phprojekt .systemNavigation .dijitButtonContents {
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.phprojekt .mainNavigation .selected {
+    color: #ffcc33;
+}
+
+.phprojekt .mainNavigation button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+    border: none;
+}
+
+.phprojekt .detailsBox .dijitDropDownButton {
+    margin: 0;
+    height: 20px;
+}
+
+.phprojekt .closeButton {
+    margin: 0px 0px 0px 0px;
+}
+
+.phprojekt .editButton .dijitButtonNode {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 20px;
+    border: none;
+    background: none;
+    vertical-align: middle;
+}
+
+.phprojekt .toTextButton {
+    background-image: url("../images/totext.gif");
+    background-repeat: no-repeat;
+    height: 16px;
+}
+
+.phprojekt .toTextButton .dijitButtonNode {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 20px;
+    border: none;
+    background: none;
+    vertical-align: baseline;
+}
+
+.phprojekt .toHtmlButton {
+    background-image: url("../images/tohtml.gif");
+    background-repeat: no-repeat;
+    height: 16px;
+}
+
+.phprojekt .toHtmlButton .dijitButtonNode {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 20px;
+    border: none;
+    background: none;
+    vertical-align: baseline;
+}
+
+.phprojekt #calendarSchedule .addButton .dijitButtonNode {
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    width: 15px;
+    border: none;
+    background: none;
+}
+
+.phprojekt .addButton {
+    margin: 0px 0px 0px 0px;
+}
+
+.phprojekt .dijitContentPane .buttonRow {
+    padding-left: 5px;
+    padding-top: 7px;
+}
+
+.phprojekt .dijitContentPane .rightButtonRow {
+    padding-top: 7px;
+}
+
+.phprojekt .dijitContentPane .rightButtonRow label {
+    padding-right: 1ex;
+}
+
+
+.phprojekt .dijitContentPane .buttonRow .dijitButtonNode {
+    margin-right: 5px;
+}
+
+.dj_ie .phprojekt .dijitContentPane .buttonRow {
+    padding-top: 6px;
+}
+
+.phprojekt .dijitButtonContents {
+    padding: 0.13em;
+}

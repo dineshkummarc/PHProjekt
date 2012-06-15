@@ -1,0 +1,68 @@
+{
+
+"##VERSION##":
+{
+    "structure":
+    {
+        "##MODULETABLE##":
+        {
+            "create":
+            {
+                "id":          "default",
+                "owner_id":    {"type": "int"},
+##STRUCTURE##
+            }
+        }
+    },
+
+    "initialData":
+    {
+        "database_manager":
+        {
+            "insert":
+            [
+##INITIALDATA##
+            ]
+        },
+
+        "module":
+        {
+            "insert":
+            [
+                {
+                    "name":      "##MODULENAME##",
+                    "label":     "##MODULELABEL##",
+                    "save_type": "##MODULESAVETYPE##",
+                    "active":    "1",
+                    "_relations":
+                    {
+                        "project_module_permissions":
+                        {
+                            "insert":
+                            [
+                                {
+                                    "module_id":  "##id##",
+                                    "project_id": "1"
+                                }
+                            ]
+                        },
+
+                        "role_module_permissions":
+                        {
+                            "insert":
+                            [
+                                {
+                                    "module_id": "##id##",
+                                    "role_id":   "1",
+                                    "access":    "139"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+}

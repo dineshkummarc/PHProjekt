@@ -1,0 +1,66 @@
+{
+
+"6.0.0":
+{
+    "structure":
+    {
+        "timecard":
+        {
+            "create":
+            {
+                "id":             "default",
+                "owner_id":       {"type": "int"},
+                "start_datetime": {"type": "datetime"},
+                "end_time":       {"type": "time"},
+                "minutes":        {"type": "int"},
+                "project_id":     {"type": "int"},
+                "notes":          {"type": "text"},
+                "module_id":      {"type": "int", "default": "1"},
+                "item_id":        {"type": "int"}
+            }
+        }
+    },
+
+    "initialData":
+    {
+        "module":
+        {
+            "insert":
+            [
+                {
+                    "name":      "Timecard",
+                    "label":     "Timecard",
+                    "save_type": "1",
+                    "active":    "1",
+                    "_relations":
+                    {
+                        "project_module_permissions":
+                        {
+                            "insert":
+                            [
+                                {
+                                    "module_id":  "##id##",
+                                    "project_id": "1"
+                                }
+                            ]
+                        },
+
+                        "role_module_permissions":
+                        {
+                            "insert":
+                            [
+                                {
+                                    "module_id": "##id##",
+                                    "role_id":   "1",
+                                    "access":    "139"
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+}

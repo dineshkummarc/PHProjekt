@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>PHProjekt</title>
+    <link rel="favicon" href="<?php echo $this->webpath ?>img/favicon.ico"></link>
+    <link rel="shortcut icon" href="<?php echo $this->webpath ?>img/favicon.ico"></link>
+
+    <?php
+    $cssFiles = array();
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/claro/claro.css";
+    $cssFiles[] = "dojo/release/dojo/dojo/resources/dojo.css";
+    $cssFiles[] = "dojo/release/dojo/dojox/widget/Toaster/Toaster.css";
+    $cssFiles[] = "css/themes/phprojekt/Calendar.css";
+    $cssFiles[] = "css/themes/phprojekt/Calendar_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/ColorPalette.css";
+    $cssFiles[] = "css/themes/phprojekt/Common.css";
+    $cssFiles[] = "css/themes/phprojekt/Dialog.css";
+    $cssFiles[] = "css/themes/phprojekt/Dialog_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Editor.css";
+    $cssFiles[] = "css/themes/phprojekt/Editor_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Grid.css";
+    $cssFiles[] = "css/themes/phprojekt/Grid_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Menu.css";
+    $cssFiles[] = "css/themes/phprojekt/Menu_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_designer.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_gantt.css";
+    $cssFiles[] = "css/themes/phprojekt/Module_timecard.css";
+    $cssFiles[] = "css/themes/phprojekt/ProgressBar.css";
+    $cssFiles[] = "css/themes/phprojekt/ResizeHandle.css";
+    $cssFiles[] = "css/themes/phprojekt/TimePicker.css";
+    $cssFiles[] = "css/themes/phprojekt/TitlePane.css";
+    $cssFiles[] = "css/themes/phprojekt/TitlePane_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Toaster.css";
+    $cssFiles[] = "css/themes/phprojekt/Toolbar.css";
+    $cssFiles[] = "css/themes/phprojekt/Toolbar_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/Tree.css";
+    $cssFiles[] = "css/themes/phprojekt/Tree_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Button.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Button_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Checkbox.css";
+    $cssFiles[] = "css/themes/phprojekt/form/CheckedMultiSelect.css";
+    $cssFiles[] = "css/themes/phprojekt/form/ComboBox.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Common.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Common_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/RadioButton.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Rating.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Slider.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Slider_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/form/Textarea.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/AccordionContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/AccordionContainer_rtl.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/BorderContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/ContentPane.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/ExpandoPane.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/Filters.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/SplitContainer.css";
+    $cssFiles[] = "css/themes/phprojekt/layout/Template.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/css-classes.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/liquid.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/reset.css";
+    $cssFiles[] = "css/themes/phprojekt/lib/typography.css";
+    $cssFiles[] = "css/themes/phprojekt/phprojektGrid.css";
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/dijit.css";
+    $cssFiles[] = "dojo/release/dojo/dijit/themes/dijit_rtl.css";
+
+    $styleUrl = $this->webpath . 'min/min/?f=' . implode(',', $cssFiles);
+    ?>
+    <link href="<?php echo $styleUrl; ?>" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+        var djConfig = {isDebug: false, parseOnLoad: true, bindEncoding: "utf-8",
+                        locale: '<?php echo $this->language; ?>'};
+    </script>
+    <?php
+    if (true === $this->isLoggedIn) {
+        if ($this->compressedDojo) {
+        ?>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/dojo.js"></script>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/phprojekt.js"></script>
+        <?php
+        } else {
+        ?>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/dojo.js.uncompressed.js"></script>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/phprojekt.js.uncompressed.js"></script>
+        <?php
+        }
+        ?>
+        <script type="text/javascript"
+            src="<?php echo $this->webpath; ?>index.php/js/index/csrfToken/<?php echo Phprojekt::createCsrfToken(); ?>">
+        </script>
+    <?php
+    } else {
+    ?>
+        <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/dojo.js"></script>
+        <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/login.js"></script>
+        <script type="text/javascript">
+            dojo.require("dojo.parser");
+            dojo.require("dijit.layout.BorderContainer");
+            dojo.require("dijit.layout.ContentPane");
+            dojo.require("dijit.Toolbar");
+            dojo.require("dijit.form.Form");
+            dojo.require("dijit.form.TextBox");
+            dojo.require("dijit.form.CheckBox");
+        </script>
+    <?php
+    }
+    ?>
+    <script type="text/javascript">
+        // This variable is needed to be able to clear an existing interval.
+        var interval;
+
+        dojo.addOnLoad(function() {
+            window.getFrontendMessage = function() {
+            <?php if ($this->frontendMsg) { ?>
+                    var pollingLoop = <?php echo $this->pollingLoop; ?>;
+                    interval = setInterval(dojo.hitch(this, function() {
+                        phpr.frontendMessage.getFrontendMessage();
+                        }), pollingLoop);
+            <?php } else { ?>
+                    return;
+            <?php } ?>
+        }});
+
+        dojo.addOnLoad(function() {
+            <?php
+            if (true !== $this->isLoggedIn) {
+            ?>
+                dojo.byId('hash').value = <?php
+                if ($this->hash) {
+                    echo '"' . $this->hash . '"';
+                } else {
+                    echo 'window.location.hash';
+                }
+                ?>;
+            <?php
+            }
+            ?>
+            <?php
+            if (true !== $this->isLoggedIn) {
+            ?>
+                dojo.byId('username').focus();
+                dojo.byId('username').select();
+            <?php
+            } else {
+            ?>
+                getFrontendMessage();
+
+            <?php
+            }
+            ?>
+        });
+    </script>
+</head>
+<body class="phprojekt">
+    <?php
+    if (true === $this->isLoggedIn) {
+    ?>
+    <script type="text/javascript">
+        dojo.addOnLoad(function() {
+            var main = new phpr.Main("<?php echo $this->webpath; ?>", 1, '<?php echo $this->language; ?>');
+        });
+    </script>
+    <?php
+    } else {
+        include ("login.phtml");
+    }
+    ?>
+</body>
+</html>
+<!-- template: index.phml -->

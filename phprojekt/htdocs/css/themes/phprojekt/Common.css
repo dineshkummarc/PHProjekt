@@ -1,0 +1,573 @@
+/**** Disabled cursor *****/
+.phprojekt .dijitSliderDisabled *,
+.phprojekt .dijitDisabledClickableRegion, /* a region the user would be able to click on, but it's disabled */
+.phprojekt .dijitSpinnerDisabled *,
+.phprojekt .dijitButtonDisabled *,
+.phprojekt .dijitDropDownButtonDisabled *,
+.phprojekt .dijitComboButtonDisabled *,
+.phprojekt .dijitComboBoxDisabled * {
+    cursor: not-allowed !important;
+}
+
+.phprojekt .body {
+  color: #222;
+  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 75%;
+  height: 100%;
+}
+
+.phprojekt .completeContent {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.phprojekt.body .positive {
+  color: #529214;
+}
+
+.phprojekt .header {
+    background: #294064 url("images/headerbg.png");
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+.phprojekt .bottomContent {
+    background: #fff;
+    width: 100%;
+    height: 32px;
+}
+
+.phprojekt .header img {
+    margin: 0;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.phprojekt .header .searchBar {
+    margin: 10px 10px;
+    background: url("images/searchbar.png");
+    width: 120px;
+    height: 26px;
+    background-repeat: no-repeat;
+    padding-top: 1px;
+}
+
+.phprojekt .header .searchBar .dijitTextBox {
+    background: transparent !important;
+    width: 83px !important;
+    border: 0px !important;
+    margin-top: 2px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding-top: 1px;
+}
+
+.phprojekt .header .searchBar input {
+    background: url("images/searchfield_bg.png");
+    width: 80px;
+    border: none;
+    height: 16px;
+    font-size: 9px;
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    color: #7E7E7E;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-align: start;
+    vertical-align: baseline;
+    margin-top: -1px;
+    margin-right: 10px;
+    margin-left: 20px;
+    padding-top: 1px;
+}
+.dj_ie7 .phprojekt .header .searchBar {
+    padding-top: 0;
+}
+.dj_ie7 .phprojekt .header .searchBar input {
+    padding-top: 0;
+}
+.dj_ie .phprojekt .header .searchBar .dijitTextBox {
+    margin-top: 3px !important;
+}
+
+.phprojekt .header .toolbar {
+    margin: 15px;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.phprojekt .subheader {
+    width: 100%;
+    height: 26px;
+    background: white;
+}
+
+.phprojekt .subheader .navigationContainerTitle {
+    background: #294064;
+    height: 26px;
+    line-height: 24px;
+    color: #ffffff;
+    font-weight: 700;
+    padding-left: 8px;
+}
+
+.phprojekt .subheader .navigationContainerTitle p {
+    margin-left: 15px;
+}
+
+.phprojekt .subheader .tab {
+    background-repeat: no-repeat;
+    height: 26px;
+    background-position: center top;
+    width: 70px;
+    line-height: 25px;
+    font: Arial;
+    color: #666666;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.phprojekt .subheader .tabActive {
+    background: url("images/tab.png");
+    color: white;
+}
+
+.phprojekt .subheader .tab a:focus,
+.phprojekt .subheader .tab a:hover,
+.phprojekt .subheader .tab a:active {
+    background-color: #8392ab;
+    color: #fff;
+}
+
+.phprojekt .navigationContainer {
+    border-bottom: 14px solid #294064;
+    border-left: 10px solid #294064;
+    background: #294064 !important;
+    overflow-y: hidden;
+}
+
+.phprojekt .treeNavigation {
+    margin: 0;
+    height: 100%;
+    overflow: none;
+}
+
+.phprojekt .containSubModuleNavigation {
+    width: 100%;
+}
+
+.phprojekt .subModuleNavigation {
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+/* Scroll for Tabs */
+.phprojekt .phprScrollWindow {
+    position: relative;
+}
+
+.phprojekt .phprScrollArrowLeft,
+.phprojekt .phprScrollArrowRight {
+    width: 2%;
+    float: left;
+    height: 23px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
+
+.phprojekt .phprScrollArrowLeft {
+    background-image: url("images/nav_main/arrow-left.gif");
+    background-position: left;
+}
+
+.phprojekt .phprScrollArrowRight {
+    background-image: url("images/nav_main/arrow-right.gif");
+    background-position: right;
+}
+
+.phprojekt .phprScrollArrowLeftHide,
+.phprojekt .phprScrollArrowRightHide {
+    width: 2%;
+    float: left;
+    background-color: #fff;
+}
+
+.phprojekt .phprScrollWrapper {
+    width: 96%;
+    float: left;
+    height: 28px;
+}
+
+.dj_ie .phprojekt .phprScrollWrapper {
+    width: 95%;
+}
+
+.phprojekt .phprScrollPane {
+    height: 28px;
+}
+
+/* Negative */
+phprojekt.body .negative {
+    color: #d12f19;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #111;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Success, error & notice boxes for messages and errors. */
+.phprojekt .error,
+.phprojekt .notice,
+.phprojekt .success {
+    padding: .1em;
+    margin-top: 0em;
+    margin-bottom: 1em;
+    border: 2px solid #ddd;
+}
+
+.phprojekt .error {
+    background: #FBE3E4;
+    color: #D12F19;
+    border-color: #FBC2C4;
+}
+
+.phprojekt .notice {
+    background: #FFF6BF;
+    color: #817134;
+    border-color: #FFD324;
+}
+
+.phprojekt .success {
+    background: #E6EFC2;
+    color: #529214;
+    border-color: #C6D880;
+}
+
+.phprojekt .error a {
+    color: #D12F19;
+}
+
+.phprojekt .notice a {
+    color: #817134;
+}
+
+.phprojekt .success a {
+    color: #529214;
+}
+
+.phprojekt .footer{
+    margin-top: 1px;
+    background-color: #fff;
+    padding-left: 194px;
+}
+
+.dj_ie .phprojekt .footer{
+    margin-top: 1px;
+    background-color: #fff;
+    padding-left: 174px;
+}
+
+/* DnD avatar-specific settings */
+/* For now it uses a default set of rules. Some other DnD classes can be modified as well. */
+.phprojekt .dojoDndItemBefore {
+    border-top: 2px solid #369;
+}
+
+.phprojekt .dojoDndItemAfter {
+    border-bottom: 2px solid #369;
+}
+
+.phprojekt .dojoDndItemOver {
+    cursor: pointer;
+}
+
+.phprojekt table.dojoDndAvatar {
+    -moz-border-radius: 0;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    background-color: #fff;
+    font-size: 75%;
+    color: black;
+}
+
+.phprojekt .dojoDndAvatar td {
+    border: none;
+}
+
+.phprojekt .dojoDndAvatar tr {
+    border: none;
+}
+
+.phprojekt .dojoDndAvatarHeader td {
+    height: 20px;
+    padding: 0 0 0 21px;
+}
+
+.phprojekt .dojoDndAvatarItem td {
+    padding: 2px;
+}
+
+.phprojekt.dojoDndMove .dojoDndAvatarHeader {
+    background-color: #f58383;
+    background-image: url("images/dndNoMove.png");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.phprojekt.dojoDndCopy .dojoDndAvatarHeader {
+    background-color: #f58383;
+    background-image: url("images/dndNoCopy.png");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.phprojekt.dojoDndMove .dojoDndAvatarCanDrop .dojoDndAvatarHeader {
+    background-color: #97e68d;
+    background-image: url("images/dndMove.png");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+.phprojekt.dojoDndCopy .dojoDndAvatarCanDrop .dojoDndAvatarHeader {
+    background-color: #97e68d;
+    background-image: url("images/dndCopy.png");
+    background-repeat: no-repeat;
+    background-position: 2px center;
+}
+
+/* Results */
+.phprojekt .results {
+    font-family: "Verdana";
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-align: start;
+    vertical-align: baseline;
+    border-bottom: 1px solid #CBCBCB;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+.phprojekt .results a {
+    font-weight: bold;
+    color: #294064;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.phprojekt .results span {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.phprojekt .resultsTitleBox {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 10px;
+    vertical-align: center;
+    color: #CBCBCB;
+    font-family: "Verdana";
+    font-size: 20px;
+    font-weight: 400;
+    font-style: normal;
+    overflow: hidden !important;
+}
+
+.phprojekt .searchsuggest {
+    width: auto;
+    border: none;
+    height: auto;
+    font-size: 9px;
+    font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFFFF;
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-align: start;
+    vertical-align: baseline;
+    margin-top: 50px;
+    margin-right: 0px;
+    background-color: #294064;
+    position: absolute;
+    border: 1px solid black;
+    right: 0px;
+    top: 50px;
+    margin: 10px 0px;
+}
+
+.phprojekt .searchsuggesttitle {
+    padding-left: 10px;
+    vertical-align: center;
+    color: #fff;
+    font-family: "Verdana";
+    font-size: 12px;
+    font-weight: 600;
+    font-style: normal;
+    overflow: hidden !important;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    width: auto;
+}
+
+.phprojekt .searchsuggesttitle a {
+    text-transform: none;
+    text-decoration: none;
+    color: #fff;
+    line-height: normal;
+    text-align: start;
+    vertical-align: baseline;
+}
+
+.phprojekt .searchsuggestcontent .results {
+    background-color: #fff;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.phprojekt .searchsuggestcontent .results a {
+    color: #000;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.phprojekt .searchsuggestcontent .results span {
+    color: #000;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.phprojekt .formContainer {
+    margin-top: 10px;
+    color: #292929;
+    border: 1px solid #294064;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 1em;
+    -o-border-radius: 10px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 7px #adadad;
+    border-radius: 10px;
+    -moz-box-sizing: border-box;
+    -opera-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -khtml-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 95%;
+}
+
+.phprojekt .formContainer td {
+    padding: 4px 0px 4px 5px;
+}
+
+/* History Table */
+.phprojekt .historyTable th {
+    background: #E9E9E9 url(images/titleBar.png) repeat-x scroll center top;
+    color: #000000 !important;
+    padding-bottom: 0;
+    border: 1px dotted #A6A6A6;
+}
+
+.phprojekt .historyTable label {
+    color: #000;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 96%;
+    vertical-align: top;
+}
+
+.phprojekt .historyTable td {
+    border: 1px dotted #A6A6A6;
+    padding: 5px;
+}
+
+.phprojekt .historyTable .grey {
+    background-color: #F2F5F9;
+}
+
+.phprojekt .historyTable .white {
+    background-color: white;
+}
+
+.phprojekt .breadCrumb,
+.phprojekt .breadCrumb a {
+    font-family: Verdana;
+    font-size: 10px;
+    font-weight: 600;
+    color: #CBCBCB;
+    margin-left: 1%;
+    margin-top: 10px;
+}
+
+.dj_ie .phprojekt .breadCrumb,
+.dj_ie .phprojekt .breadCrumb a {
+    margin-top: 9px;
+}
+
+.phprojekt .breadCrumb a {
+    margin-left: 0;
+    text-decoration: none;
+}
+
+.phprojekt .highlightChanges {
+    border: 3px solid #ff0000 !important;
+}
+
+/* Help */
+.phprojekt .helpDialog ol,
+.phprojekt .helpDialog ul {
+    margin: 0 0 0 1.5em;
+}
+
+.phprojekt .formTabSubForm {
+    margin-top: 10px;
+}
+
+.phprojekt .loadingOuter {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.phprojekt .loadingMiddle {
+    bottom: 50%;
+    right: 50%;
+    position: absolute;
+}
+
+.phprojekt .loadingMiddleInner {
+    left: 50%;
+    top: 50%;
+    position: relative;
+}
+
+.phprojekt .loadingText {
+    text-align: center;
+}

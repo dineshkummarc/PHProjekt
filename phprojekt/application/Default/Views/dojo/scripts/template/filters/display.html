@@ -1,0 +1,29 @@
+<div>
+    {% if operator %}
+    <div class="displayOperator">
+        {{operator}}
+    </div>
+    {% endif %}
+    <div class="displayFilter">
+        <div class="displayLeftFilter">
+            &nbsp;
+        </div>
+        <div class="displayFilterField">
+            {{field}}
+        </div>
+        <div class="displayFilterRule">
+            <i>{{rule}}</i>
+        </div>
+        <div class="displayFilterValue">
+            <b>{{value}}</b>
+        </div>
+        <div class="displayFilterButton">
+            <button dojoType="dijit.form.Button" showLabel="false" iconClass="close" class="closeFilter closeButton"}
+            onClick="dojo.publish('{{module}}.gridProxy', ['deleteFilter', '{{id}}'])";>
+            </button>
+        </div>
+        <div class="displayRightFilter">
+            &nbsp;
+        </div>
+    </div>
+</div>

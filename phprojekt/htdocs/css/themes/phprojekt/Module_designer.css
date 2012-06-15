@@ -1,0 +1,153 @@
+/* Module Designer */
+
+#moduleDesignerContent .container {
+    padding: 1em 3em;
+    cursor: default;
+    radius: 8pt;
+    background: #fff;
+}
+
+#moduleDesignerContent .dojoDndContainerOver {
+}
+
+#moduleDesignerContent .dojoDndTargetDisabled {
+    background: #eee;
+}
+
+#moduleDesignerContent .dojoDndItem {
+    padding: 0 3px;
+}
+
+.dj_ff2 #moduleDesignerContent .dojoDndItem {
+    -moz-user-select: none;
+}
+
+#moduleDesignerContent .dojoDndItemOver {
+    background: #ededed;
+    cursor: pointer;
+}
+
+#moduleDesignerContent .dojoDndItemSelected {
+    background: #ededed;
+}
+
+#moduleDesignerContent .dojoDndItemAnchor {
+    background: #ededed;
+}
+
+#moduleDesignerContent .dojoDndItemOver .dojoDndItemSelected {
+    background: #ededed;
+}
+
+#moduleDesignerContent .dojoDndItemOver .dojoDndItemAnchor {
+    background: #ededed;
+}
+
+#moduleDesignerContent .dojoDndItemBefore {
+}
+
+#moduleDesignerContent .dojoDndItemAfter {
+}
+
+#moduleDesignerContent .dojoDndAvatar {
+    font-size: 75%;
+    radius: 8pt;
+}
+
+#moduleDesignerContent .dojoDndAvatarHeader {
+    background: #aaa;
+}
+
+#moduleDesignerContent .dojoDndAvatarItem {
+    background: #fff;
+}
+
+.phprojekt #moduleDesignerContent .dijitInputField INPUT,
+.phprojekt #moduleDesignerContent .dijitTextBox {
+    width: 209px;
+}
+
+.phprojekt #moduleDesignerContent .twoFields .dijitInputField INPUT,
+.phprojekt #moduleDesignerContent .twoFields .dijitTextBox {
+    width: 98px;
+}
+
+.dj_ie .phprojekt #moduleDesignerContent .file {
+    width: 220px;
+}
+
+.phprojekt #moduleDesignerContent .dijitMultiSelect,
+.phprojekt #moduleDesignerContent select,
+.phprojekt #moduleDesignerContent .dijitComboBox,
+.phprojekt #moduleDesignerContent .dijitSpinner,
+.phprojekt #moduleDesignerContent .dijitSlider {
+    width: 217px;
+}
+
+.phprojekt #moduleDesignerContent .dijitTextArea {
+    width: 218px;
+}
+
+.dj_ie .phprojekt #moduleDesignerContent .dijitTextArea {
+    width: 209px;
+}
+
+.phprojekt #moduleDesignerContent .form {
+     margin-bottom: 0.1em;
+     width: 100%;
+}
+
+.phprojekt #moduleDesignerContent .form .col1 {
+     width: 19%;
+}
+
+.phprojekt #moduleDesignerContent .form .col2 {
+     text-align: left;
+     width: 50%;
+}
+
+.phprojekt #moduleDesignerContent .form .col3 {
+     text-align: left;
+     width: 31%;
+}
+
+.phprojekt #moduleDesignerContent #moduleDesignerEditor .form .col1 {
+     width: 35%;
+}
+
+.phprojekt #moduleDesignerContent #moduleDesignerEditor .form .col2 {
+     text-align: left;
+     width: 50%;
+}
+
+.phprojekt #moduleDesignerContent #moduleDesignerEditor .form .col3 {
+     text-align: left;
+     width: 15%;
+}
+
+.phprojekt #moduleDesignerContent .form td {
+    vertical-align: top;
+}
+
+.phprojekt #moduleDesignerContent .dijitButton,
+.phprojekt #moduleDesignerContent .dijitDropDownButton,
+.phprojekt #moduleDesignerContent .dijitComboButton {
+    margin: 0;
+}
+
+.phprojekt #moduleDesignerTarget .edit,
+.phprojekt #moduleDesignerTarget .cross {
+    margin-left: -4px;
+}
+
+/* Dialog */
+.phprojekt .moduleManagerDialog {
+    background: #294064;
+}
+
+.phprojekt .moduleManagerDialog .dijitDialogPaneContent {
+    background: #294064;
+    padding: 0px;
+    border: 0px;
+    height: 98% !important;
+}

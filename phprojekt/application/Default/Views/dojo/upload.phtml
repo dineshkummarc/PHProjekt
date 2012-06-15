@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>PHProjekt</title>
+    <link rel="shortcut icon" href="<?php echo $this->webpath; ?>img/favicon.ico" type="image/x-icon" />
+    <style type="text/css">
+        @import "<?php echo $this->webpath; ?>css/themes/phprojekt/phprojektCssCompiler.php";
+    </style>
+    <script type="text/javascript">
+        var djConfig = {isDebug: false, parseOnLoad: true, useCommentedJson: true};
+    </script>
+        <?php
+        if ($this->compressedDojo) {
+        ?>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/dojo.js"></script>
+        <?php
+        } else {
+        ?>
+            <script type="text/javascript" src="<?php echo $this->webpath; ?>dojo/release/dojo/dojo/dojo.js.uncompressed.js"></script>
+        <?php
+        }
+        ?>
+    <script type="text/javascript">
+        var par   = window.parent.document;
+        var input = par.getElementById("<?php echo $this->field; ?>");
+        if (input) {
+            input.value = "<?php echo $this->value; ?>";
+        }
+    </script>
+</head>
+<body class="phprojekt">
+    <form method="post" id="upload" action="<?php echo $this->formPath; ?>" enctype="multipart/form-data" style="display:inline;">
+        <div style="display:inline;">
+            <input type="hidden" name="field" id="field" value="<?php echo $this->field; ?>" />
+            <input type="hidden" name="id" id="id" value="<?php echo $this->itemId; ?>" />
+            <input type="hidden" name="csrfToken" id="csrfToken" value="<?php echo $this->csrfToken; ?>" />
+            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $this->maxUploadSize; ?>" />
+            <input type="file" name="uploadedFile" id="uploadedFile" onChange="dojo.byId('upload').submit();" />
+        </div>
+    </form>
+    <br />
+    <?php
+    $iframeSize = 23;
+    if (isset($this->errorMessage) && !empty($this->errorMessage)) {
+        echo '
+        <div style="padding: 1px 0 1px 5px; font-weight: bold;">
+            '. $this->errorMessage .'
+        </div>
+        ';
+    }
+    if (is_array($this->files)) {
+        echo '
+        <div id="filesList" style="display:inline;">
+            <table cellspacing="0" cellpadding="0">
+        ';
+        $iframeSize += count($this->files)*20;
+        foreach ($this->files as $file) {
+            if (isset($file['fileName'])) {
+                echo '
+            <tr>
+                <td style="padding: 0 0 0 5px; vertical-align: middle;">';
+                if (isset($file['downloadLink'])) {
+                    echo '
+                    <a href="#" onClick="window.location.href=\''. $file['downloadLink'] . '\'; return false;" target="_blank">'
+                    . $file['fileName'] . '</a>';
+                } else {
+                    echo $file['fileName'];
+                }
+                echo '
+                </td>
+                <td style="padding: 0 0 0 5px; width:5px">
+                    &nbsp;
+                </td>';
+                if (isset($file['deleteLink'])) {
+                    echo '
+                <td style="padding: 0 0 0 5px;">
+                    <button dojoType="dijit.form.Button" showLabel="false" iconClass="close" class="closeButton"
+                    onClick="window.location.href=\''. $file['deleteLink'] . '\';">
+                    </button>
+                </td>';
+                }
+                echo '
+            </tr>
+                ';
+            }
+        }
+        echo '
+            </table>
+        </div>
+        ';
+    }
+    ?>
+    <!-- Set the parent Iframe size -->
+    <script type="text/javascript">
+        // Just resize the iframe if we are inside a form (not in the module designer)
+        if (window.parent.document.getElementById('filesIframe_' + '<?php echo $this->field; ?>')) {
+            window.parent.document.getElementById('filesIframe_' + '<?php echo $this->field; ?>').height = <?php echo $iframeSize; ?>;
+        }
+    </script>
+</body>
+</html>

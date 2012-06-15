@@ -1,0 +1,25 @@
+<?php
+echo $this->title . ':' . $this->endOfLine;
+echo $this->url . $this->endOfLine;
+echo $this->endOfLine;
+echo $this->currentData . ':' . $this->endOfLine;
+echo $this->endOfLine;
+
+// All the fields of the item
+foreach ($this->mainFields as $field) {
+    echo $field['label'] . ': ' . $field['value'] . $this->endOfLine;
+}
+echo $this->endOfLine;
+
+// If it is a modification, then the changes are showed
+if (!empty($this->changes)) {
+    echo $this->changesDone . ':' . $this->endOfLine;
+    foreach ($this->changes as $change) {
+        echo $this->endOfLine;
+        echo $this->field . ': ' . $change['label'] . $this->endOfLine;
+        echo $this->oldValue . ': ' . $change['oldValue'] . $this->endOfLine;
+    }
+    echo $this->endOfLine;
+}
+echo $this->endOfLine;
+echo $this->copyright;

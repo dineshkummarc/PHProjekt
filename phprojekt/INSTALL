@@ -1,0 +1,139 @@
+PHProjekt 6 Installation - 6.0
+--------------------------------------------------
+
+1. Requirements
+2. Installation
+3. Configuration
+4. Permissions
+5. Logs
+6. Finalizing
+A. Notes
+B. License
+
+--------------------------------------------------
+
+1. Requirements
+
+  * HTTP Server
+  * MySQL version 5.x
+  * PHP 5.2.4 with pdo_mysql drivers installed
+  * PHP extensions:
+        mbstring
+        iconv
+        ctype
+        gd
+        pcre
+        pdo (pdo_mysql / pdo_sqlite2 / pdo_pgsql)
+        Reflection
+        session
+        SPL
+        zlib
+  * PHP Settings:
+        magic_quotes_gpc     = 0
+        magic_quotes_runtime = 0
+        magic_quotes_sybase  = 0
+
+  * Recommend PHP Settings:
+        register_globals     = 0
+        safe_mode            = 0
+
+    If you don't have access to the php.ini to change these values,
+    you can try creating a .htaccess file with the following content
+    for example:
+
+        php_flag magic_quotes_gpc off
+
+    and put it into the root folder of the app.
+
+    Note: Phprojekt 6 has been tested with:
+        * Apache HTTP Server 2.2
+        * PHP 5.2.6
+        * MySQL Server 5.0
+
+2. Installation
+
+ 1. Download the compressed package file and decompress it into an
+    appropriate folder outside the ones accessed by your HTTP server.
+
+     $ tar xzvpf phprojekt-6.X.tar.gz
+     $ cp -R phprojekt/* /srv/www/
+
+    Use your favorite packaging tool on Windows under an appropriate
+    path "C:\phprojekt\"
+
+ 2. For security reasons, we recommend to let your server docroot
+    point to the phprojekt htdocs folder. For example
+    your vhost points to /srv/www/phorjekt/htdocs.
+
+    UNIX        /srv/www/htdocs/
+    WINDOWS     C:\phprojekt\htdocs\
+
+ 3. Create a database in your MySQL server (e.g. phprojekt). Make
+    sure that the database user that you want to use has the rights
+    to load files.  An example:
+
+    UNIX
+      $ mysql -u root -p
+      mysql> CREATE DATABASE 'phprojekt';
+      mysql> CREATE USER 'phprojekt'@'localhost' IDENTIFIED BY 'phprojekt_password';
+      mysql> GRANT ALL PRIVILEGES ON 'phprojekt'.* TO 'phprojekt'@'localhost';
+    WINDOWS
+      mysql -u root -p
+      mysql> CREATE DATABASE phprojekt;
+      mysql> CREATE USER 'phprojekt'@'localhost' IDENTIFIED BY 'phprojekt_password';
+      mysql> GRANT ALL PRIVILEGES ON phprojekt.* TO 'phprojekt'@'localhost';
+
+3. Permission
+
+    For security reasons PHProjekt stores sensitive data in a
+    separate directory. We stronlgy recommend to create a directory
+    outside of the document root. It needs to be writeable for the
+    webserver group. You can set these permissions using the chmod(1)
+    command.  Assuming your webserver runs on the group "www-data":
+
+    UNIX
+      $ chmod -R 0755 /srv/www
+      $ chgrp -R www-data /srv/www
+      $ mkdir /srv/private/phprojekt
+      $ chmod -R 0770 /srv/private/phprojekt/
+
+4. Run Setup
+
+    Open your browser and go to your PHProjekt installation and run the setup.
+    For example http://example.com/phprojekt/. You will be automatically
+    redirected to http://example.com/phprojekt/htdocs/setup.php.
+
+    Follow the instructions. The setup requires an empty database
+    (which we created in step 2) and a writeable folder to store
+    sensitive data (which we created in step 3).
+
+5. Finalizing
+
+    Log in using the admin user (see Users notes in the Notes section
+    of this document).  It is suggested to change the password,
+    entering to 'Setting' option in the top menu -> the tab 'User'
+    -> Password fields.
+
+DONE
+
+
+A. Notes
+
+  * BROWSER
+    The site has been tested with Firefox, Internet Explorer, Google Chrome.
+
+  * USERS
+    The database script generates the following users:
+
+    User: admin
+    Password: test
+
+    User: test
+    Password: test
+
+
+B. License
+
+    PHProjekt 6 is licensed under the terms and conditions of the
+    Lesser GNU Public License version 3.  Please refer to the LICENSE
+    file distributed with this file.
